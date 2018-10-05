@@ -676,6 +676,10 @@
     },
 
     _userInputValueChanged: function() {
+      var inputValue = this._inputValue;
+      this._selectedDate = null;
+      this._inputValue = inputValue;
+
       var parsedDate = this.i18n.parseDate && this.i18n.parseDate(this._inputValue);
       if (this._isValidDate(parsedDate)) {
         this._ignoreFocusedDateChange = true;
